@@ -1,0 +1,16 @@
+#Given two arrays, write a function to compute their intersection.
+#Example 1:
+#Input: nums1 = [1,2,2,1], nums2 = [2,2]
+#Output: [2]
+
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        # Unique value result set
+        result = set()
+        for element in nums1:
+            # Search in nums2, if found: add to result, if not found: continue
+            for e_2 in nums2:
+                if element == e_2:
+                    result.add(element)
+        # Return a list of unieq elements stored in result set
+        return list(result)
